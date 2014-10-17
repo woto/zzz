@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Yyys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Www</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @yyys.each do |yyy| %>
+      <tr>
+        <td><%= yyy.www %></td>
+        <td><%= link_to 'Show', yyy %></td>
+        <td><%= link_to 'Edit', edit_yyy_path(yyy) %></td>
+        <td><%= link_to 'Destroy', yyy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Yyy', new_yyy_path %>

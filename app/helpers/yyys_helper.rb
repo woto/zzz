@@ -1,0 +1,2 @@
+module YyysHelper
+end
