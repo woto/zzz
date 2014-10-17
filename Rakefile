@@ -4,3 +4,13 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+namespace :test do
+  desc "Run tests for rake"
+  Rake::TestTask.new(:rake) do |t|
+    t.libs << "test"
+    t.pattern = 'test/rake/**/*_test.rb'
+  end
+end
+
+Rake::Task[:test].enhance { Rake::Task["test:rake"].invoke }
